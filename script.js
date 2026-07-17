@@ -34,6 +34,10 @@ function createHeart() {
   heart.style.opacity = Math.random() * 0.5 + 0.5;
 
   container.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 20000);
 }
 
 setInterval(createHeart, 300);
