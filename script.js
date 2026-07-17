@@ -64,3 +64,10 @@ clearBtn.addEventListener("click", () => {
     setTimeout(() => heart.remove(), 1000);
   });
 });
+
+// Follow nubcat
+const followCat = document.getElementById("followCat");
+document.addEventListener("mousemove", (event) => {
+  followCat.style.left = event.clientX + "px";
+  followCat.style.top = event.clientY + "px";
+});

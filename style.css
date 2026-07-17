@@ -4,6 +4,16 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100vh;
+  font-family: "Quicksand", sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
 }
 
 main button {
@@ -30,7 +40,6 @@ button {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono", monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -50,6 +59,7 @@ button {
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+  font-family: "Quicksand", sans-serif;
 }
 
 button:focus {
@@ -71,6 +81,15 @@ button:hover {
 button:active {
   box-shadow: #9b51b3 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.button-wrapper {
+  position: relative;
+}
+
+main button {
+  position: relative;
+  z-index: 2;
 }
 
 .heart-container {
@@ -128,9 +147,37 @@ button:active {
   font-weight: bold;
   color: white;
   text-align: center;
-  margin: 20rem;
+  margin-top: 2rem;
 }
 
 .counter-container::after {
   content: "Days together: " counter(dayCounter);
+}
+
+/* Images */
+.nub-cat {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 1;
+}
+
+.nub-cat img {
+  width: 80px;
+  height: auto;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+}
+
+#followCat {
+  position: fixed;
+  width: 50px;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.05s linear;
 }
